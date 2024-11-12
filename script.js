@@ -44,7 +44,7 @@ function calculate() {
 
     // Step 4: Show the result
     document.getElementById('result').innerHTML = `
-      <p>In ${yearsToSave} years, the future value of your desired course for your child will be: S Rs: ${futureValue.toFixed(2)}</p>
+      <p>The future value of your desired course for your child will be: S Rs: ${futureValue.toFixed(2)}</p>
       <p>To achieve your goal, you will need to save S Rs: ${roundedMonthlyContribution} per month from now on.</p>
     `;
 }
