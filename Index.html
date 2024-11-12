@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Education Savings Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+  <header class="navbar">
+    <div class="logo">
+      <img src="images.jfif" alt="Logo" class="logo-img">
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="toggleMenu()">&#9776;</div> <!-- Hamburger icon -->
+    </nav>
+  </header>
+
+  <div class="intro-section">
+    <h1>Child Education Fund</h1>
+    <p>
+      The cost of education continues to soar, so preparation is crucial. Begin by calculating how much you're likely to
+      need - to give your children the best education they deserve!
+    </p>
+
+  </div>
+  <div class="container">
+    <h1>Education Savings Calculator</h1>
+
+    <!-- Input for child's current age -->
+    <div class="input-group">
+      <label>How old is your child today?</label>
+      <input type="range" id="childAge" min="0" max="20" value="10" oninput="updateChildAge()">
+      <span id="childAgeValue">10</span>
+    </div>
+
+    <!-- Input for child's higher education start age -->
+    <div class="input-group">
+      <label>At what age will your child be starting his/her higher education?</label>
+      <input type="range" id="educationStartAge" min="16" max="30" value="18" oninput="updateEducationStartAge()">
+      <span id="educationStartAgeValue">18</span>
+    </div>
+
+    <!-- Dropdown for course selection -->
+    <div class="input-group">
+      <label>Which course are you preparing for?</label>
+      <select id="courseSelect" onchange="calculateAndHighlight()">
+        <option value="144300" data-row="rowLahore">Medical (Lahore) - S Rs: 144,300</option>
+        <option value="487500" data-row="rowKarachi">Medical (Karachi) - S Rs: 487,500</option>
+        <option value="676056" data-row="rowIslamabad">Medical (Islamabad) - S Rs: 676,056</option>
+        <option value="476520" data-row="rowPeshawar">Medical (Peshawar) - S Rs: 476,520</option>
+      </select>
+    </div>
+
+    <!-- Table showing course costs -->
+    <table class="course-table">
+      <tr id="rowLahore">
+        <td>Medical (Lahore)</td>
+        <td>S Rs: 144,300</td>
+      </tr>
+      <tr id="rowKarachi">
+        <td>Medical (Karachi)</td>
+        <td>S Rs: 487,500</td>
+      </tr>
+      <tr id="rowIslamabad">
+        <td>Medical (Islamabad)</td>
+        <td>S Rs: 676,056</td>
+      </tr>
+      <tr id="rowPeshawar">
+        <td>Medical (Peshawar)</td>
+        <td>S Rs: 476,520</td>
+      </tr>
+    </table>
+
+    <!-- Inflation rate and investment rate inputs -->
+    <div class="input-group">
+      <label>Factoring an annual inflation rate of (%)</label>
+      <input type="number" id="inflationRate" value="3">
+    </div>
+
+    <div class="input-group">
+      <label>And an investment rate at (%)</label>
+      <input type="number" id="investmentRate" value="5">
+    </div>
+
+    <!-- Calculate and Reset buttons -->
+    <div class="buttons">
+      <button onclick="calculate()">Calculate</button>
+      <button onclick="resetCalculation()">Reset Calculation</button>
+    </div>
+
+    <!-- Display calculated results -->
+    <div class="results">
+      <h3>Here are your estimated coverage needs</h3>
+      <p id="result"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
