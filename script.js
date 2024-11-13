@@ -23,7 +23,7 @@ function calculateAndHighlight() {
 function calculate() {
     const childAge = parseInt(document.getElementById('childAge').value);
     const educationStartAge = parseInt(document.getElementById('educationStartAge').value);
-    const courseCost = parseFloat(document.getElementById('courseSelect').value); // SPKR144,300 for Lahore
+    const courseCost = parseFloat(document.getElementById('courseSelect').value); // Rs144,300 for Lahore
     const inflationRate = parseFloat(document.getElementById('inflationRate').value) / 100; // Inflation rate as percentage
     const investmentRate = parseFloat(document.getElementById('investmentRate').value) / 100; // Investment rate as percentage
 
@@ -44,8 +44,8 @@ function calculate() {
 
     // Step 4: Show the result
     document.getElementById('result').innerHTML = `
-      <p>The future value of your desired course for your child will be: S Rs: ${futureValue.toFixed(2)}</p>
-      <p>To achieve your goal, you will need to save S Rs: ${roundedMonthlyContribution} per month from now on.</p>
+      <p>The future value of your desired course for your child will be: Rs: ${futureValue.toFixed(2)}</p>
+      <p>To achieve your goal, you will need to save Rs: ${roundedMonthlyContribution} per month from now on.</p>
     `;
 }
 
